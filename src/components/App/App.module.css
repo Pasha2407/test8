@@ -1,0 +1,42 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gif {
+    position: absolute;
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    transform: translateY(150px) translateX(-5px);
+}
+
+.textUp {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    transform: translateY(-300px)
+}
+
+.textUp>p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.textUp img:first-child {
+    width: 60px;
+    height: auto
+}
+
+.textUp img:last-child {
+    width: 40px;
+    height: auto
+}
