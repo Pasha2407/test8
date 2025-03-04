@@ -6,7 +6,7 @@ import { App } from 'components/App/App';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/my-react-template">
+  <BrowserRouter basename="/test8">
     <React.StrictMode>
       <App />
     </React.StrictMode>
