@@ -1,18 +1,21 @@
-import { FirstButton } from 'components/FirstButton/FirstButton';
 import React, { useState } from 'react';
-import s from './App.module.css';
 import gifCats from '../../images/cats.gif';
 import s1 from '../../images/s1.png';
 import s2 from '../../images/s2.png';
+import { FirstButton } from 'components/FirstButton/FirstButton';
 import { Kotopad } from 'components/Kotopad/Kotopad';
+import s from './App.module.css';
 
 export const App = () => {
   const [isZoomed, setIsZoomed] = useState(false);
   const [showGif, setShowGif] = useState(false);
   const [showKotopad, setShowKotopad] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
+    if (isClicked) return;
     setIsZoomed(true);
+    setIsClicked(true);
   };
 
   const handleAnimationEnd = () => {
@@ -29,6 +32,7 @@ export const App = () => {
         handleClick={handleClick}
         isZoomed={isZoomed}
         handleAnimationEnd={handleAnimationEnd}
+        isClicked={isClicked}
       />
       {showGif && (
         <img src={gifCats} alt="GIF" className={s.gif} onClick={startKotopad} />
@@ -43,7 +47,7 @@ export const App = () => {
           </p>
         </div>
       )}
-      {showKotopad && <Kotopad />}
+      {showKotopad && <Kotopad s1={s1} s2={s2} />}
     </div>
   );
 };

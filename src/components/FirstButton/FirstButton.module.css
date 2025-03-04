@@ -8,9 +8,10 @@
     cursor: pointer;
     font-size: 30px;
     border: none;
+    overflow: hidden;
     transition: transform 10s ease-in-out,
 }
 
 .zoom {
-    transform: scale(30) translateX(42px);
+    transform: scale(30) translateX(27px);
 }
