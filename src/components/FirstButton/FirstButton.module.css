@@ -7,11 +7,12 @@
     color: white;
     cursor: pointer;
     font-size: 30px;
+    letter-spacing: 1px;
     border: none;
     overflow: hidden;
     transition: transform 8s ease-in-out,
 }
 
 .zoom {
-    transform: scale(70);
+    transform: scale(70) translateX(-1%);
 }
