@@ -9,7 +9,9 @@ export const Finish = () => {
   useEffect(() => {
     const sendRequest = async () => {
       try {
-        await fetch('http://localhost:4000/finish', { method: 'POST' });
+        await fetch('https://test8-backend.onrender.com/finish', {
+          method: 'POST',
+        });
       } catch (error) {
         console.error('Помилка при відправці запиту:', error);
       }

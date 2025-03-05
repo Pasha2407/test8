@@ -15,7 +15,9 @@ export const App = () => {
   const [showKotopad, setShowKotopad] = useState(false);
 
   const handleClick = async () => {
-    await fetch('http://localhost:4000/button', { method: 'POST' });
+    await fetch('https://test8-backend.onrender.com/button', {
+      method: 'POST',
+    });
     if (isClicked) return;
     setZoomButton(true);
     setIsClicked(true);
@@ -41,7 +43,7 @@ export const App = () => {
   };
 
   const startKotopad = async () => {
-    await fetch('http://localhost:4000/gif', { method: 'POST' });
+    await fetch('https://test8-backend.onrender.com/gif', { method: 'POST' });
     setShowKotopad(true);
   };
 
