@@ -28,7 +28,7 @@ export const App = () => {
     if (showGif) {
       const timer = setTimeout(() => {
         setZoomGif(true);
-      }, 300);
+      }, 100);
       return () => {
         clearTimeout(timer);
       };

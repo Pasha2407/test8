@@ -8,11 +8,12 @@
     cursor: pointer;
     font-size: 30px;
     letter-spacing: 1px;
+    line-height: 1.5;
     border: none;
     overflow: hidden;
     transition: transform 8s ease-in-out,
 }
 
 .zoom {
-    transform: scale(70) translateX(-1%);
+    transform: scale(70);
 }
