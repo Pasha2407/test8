@@ -72,10 +72,10 @@ export const Kotopad = ({ s1, s2 }) => {
     <div className={s.container}>
       {count < 10 && showText && (
         <div className={s.title}>
-          <p>
+          <p className={s.bigText}>
             Почався котопад <img src={s1} alt="s1"></img>
           </p>
-          <p>
+          <p className={s.smallText}>
             Тикай на котиків і отримаєш подарунок <img src={s2} alt="s2"></img>
           </p>
         </div>

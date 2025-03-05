@@ -10,24 +10,30 @@
     margin-top: 20px;
 }
 
-.title p:first-child {
-    font-size: 30px;
-}
-
-.title p:last-child {
-    font-size: 18px;
-}
-
 .title>p {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 10px;
-    margin: 5px;
+    margin: 5px 0;
+    line-height: 1.5;
 }
 
-.title img {
+.bigText {
+    font-size: 30px;
+}
+
+.smallText {
+    font-size: 18px;
+}
+
+.bigText>img {
+    width: 40px;
+    height: auto
+}
+
+.smallText>img {
     width: 30px;
     height: auto
 }

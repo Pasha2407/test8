@@ -9,15 +9,23 @@
 
 .gif {
     position: absolute;
-    width: 200px;
+    width: 300px;
     height: auto;
     transform: translateY(-60px);
+    border-radius: 30px;
+    transform: scale(0);
+    transition: transform 3s ease-in-out,
+}
+
+.zoomGif {
+    transform: scale(1);
 }
 
 .textUp {
     position: absolute;
     color: white;
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 1.5;
     text-align: center;
     transform: translateY(-300px)
 }
@@ -27,15 +35,10 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin: 10px 0;
 }
 
-
-.textUp img:first-child {
-    width: 60px;
-    height: auto
-}
-
-.textUp img:last-child {
+.textUp img {
     width: 40px;
     height: auto
 }

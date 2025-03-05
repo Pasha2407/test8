@@ -9,9 +9,9 @@
     font-size: 30px;
     border: none;
     overflow: hidden;
-    transition: transform 10s ease-in-out,
+    transition: transform 8s ease-in-out,
 }
 
 .zoom {
-    transform: scale(30) translateX(27px);
+    transform: scale(70);
 }

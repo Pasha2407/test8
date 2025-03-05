@@ -1,11 +1,15 @@
 import s from './FirstButton.module.css';
 
-export const FirstButton = ({ handleClick, isZoomed, handleAnimationEnd }) => {
+export const FirstButton = ({
+  handleClick,
+  zoomButton,
+  buttonAnimationEnd,
+}) => {
   return (
     <button
-      className={`${s.button} ${isZoomed ? s.zoom : ''}`}
+      className={`${s.button} ${zoomButton ? s.zoom : ''}`}
       onClick={handleClick}
-      onTransitionEnd={handleAnimationEnd}
+      onTransitionEnd={buttonAnimationEnd}
     >
       Натисни на мене
     </button>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import gifCats from '../../images/cats.gif';
 import s1 from '../../images/s1.png';
 import s2 from '../../images/s2.png';
@@ -7,19 +7,36 @@ import { Kotopad } from 'components/Kotopad/Kotopad';
 import s from './App.module.css';
 
 export const App = () => {
-  const [isZoomed, setIsZoomed] = useState(false);
-  const [showGif, setShowGif] = useState(false);
-  const [showKotopad, setShowKotopad] = useState(false);
+  const [zoomButton, setZoomButton] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
+  const [showGif, setShowGif] = useState(false);
+  const [zoomGif, setZoomGif] = useState(false);
+  const [showText, setShowText] = useState(false);
+  const [showKotopad, setShowKotopad] = useState(false);
 
   const handleClick = () => {
     if (isClicked) return;
-    setIsZoomed(true);
+    setZoomButton(true);
     setIsClicked(true);
   };
 
-  const handleAnimationEnd = () => {
+  const buttonAnimationEnd = () => {
     setShowGif(true);
+  };
+
+  useEffect(() => {
+    if (showGif) {
+      const timer = setTimeout(() => {
+        setZoomGif(true);
+      }, 300);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [showGif]);
+
+  const gifAnimationEnd = () => {
+    setShowText(true);
   };
 
   const startKotopad = () => {
@@ -30,14 +47,20 @@ export const App = () => {
     <div className={s.app}>
       <FirstButton
         handleClick={handleClick}
-        isZoomed={isZoomed}
-        handleAnimationEnd={handleAnimationEnd}
+        zoomButton={zoomButton}
+        buttonAnimationEnd={buttonAnimationEnd}
         isClicked={isClicked}
       />
       {showGif && (
-        <img src={gifCats} alt="GIF" className={s.gif} onClick={startKotopad} />
+        <img
+          src={gifCats}
+          alt="GIF"
+          className={`${s.gif} ${zoomGif ? s.zoomGif : ''}`}
+          onClick={startKotopad}
+          onTransitionEnd={gifAnimationEnd}
+        />
       )}
-      {showGif && (
+      {showText && (
         <div className={s.textUp}>
           <p>
             Вумнічка <img src={s1} alt="s1"></img>
