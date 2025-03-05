@@ -1,6 +1,6 @@
 .button {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     background: rgb(255, 47, 152);
     background: radial-gradient(circle, rgba(255, 47, 152, 1) 0%, rgba(251, 120, 186, 1) 80%);
     border-radius: 50%;
@@ -9,11 +9,12 @@
     font-size: 30px;
     letter-spacing: 1px;
     line-height: 1.5;
+    text-align: center;
     border: none;
     overflow: hidden;
-    transition: transform 8s ease-in-out,
+    transition: transform 7s ease-in-out,
 }
 
 .zoom {
-    transform: scale(70);
+    transform: scale(50);
 }
