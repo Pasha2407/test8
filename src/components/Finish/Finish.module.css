@@ -3,7 +3,6 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 100px;
     background-image: url('../../images/bg.jpg');
     background-position: center;
     background-size: cover;
