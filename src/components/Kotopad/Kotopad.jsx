@@ -7,6 +7,7 @@ import k5 from '../../images/k5.png';
 import k6 from '../../images/k6.png';
 import k7 from '../../images/k7.png';
 import k8 from '../../images/k8.png';
+import { Finish } from 'components/Finish/Finish';
 import s from './Kotopad.module.css';
 
 const images = [k1, k2, k3, k4, k5, k6, k7, k8];
@@ -55,8 +56,11 @@ export const Kotopad = ({ s1, s2 }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const clickCat = () => {
-    if (showText) setCount(count + 1);
+  const clickCat = catId => {
+    if (showText) {
+      setCount(count + 1);
+      setCats(prevCats => prevCats.filter(cat => cat.id !== catId));
+    }
   };
 
   useEffect(() => {
@@ -76,20 +80,21 @@ export const Kotopad = ({ s1, s2 }) => {
             Почався котопад <img src={s1} alt="s1"></img>
           </p>
           <p className={s.smallText}>
-            Тикай на котиків і отримаєш подарунок <img src={s2} alt="s2"></img>
+            Спіймай 10 котиків і отримаєш подарунок{' '}
+            <img src={s2} alt="s2"></img>
           </p>
         </div>
       )}
 
       {count === 10 ? (
-        <div className={s.finish}>Finish</div>
+        <Finish />
       ) : (
         cats.map(cat => (
           <img
             key={cat.id}
             src={cat.src}
             className={s.kotopad}
-            onClick={clickCat}
+            onClick={() => clickCat(cat.id)}
             style={{ left: `${cat.left}%` }}
             alt="cat"
           />

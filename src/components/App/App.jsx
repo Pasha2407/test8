@@ -14,7 +14,8 @@ export const App = () => {
   const [showText, setShowText] = useState(false);
   const [showKotopad, setShowKotopad] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    await fetch('http://localhost:4000/button', { method: 'POST' });
     if (isClicked) return;
     setZoomButton(true);
     setIsClicked(true);
@@ -39,7 +40,8 @@ export const App = () => {
     setShowText(true);
   };
 
-  const startKotopad = () => {
+  const startKotopad = async () => {
+    await fetch('http://localhost:4000/gif', { method: 'POST' });
     setShowKotopad(true);
   };
 

@@ -1,0 +1,15 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../images/bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.container>p {
+    color: white;
+    font-size: 30px;
+}

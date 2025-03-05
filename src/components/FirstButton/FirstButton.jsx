@@ -11,7 +11,8 @@ export const FirstButton = ({
       onClick={handleClick}
       onTransitionEnd={buttonAnimationEnd}
     >
-      Натисни <br />
+      Натисни
+      <br />
       на мене
     </button>
   );
