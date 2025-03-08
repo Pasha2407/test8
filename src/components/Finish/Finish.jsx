@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import gifCat from '../../images/f1.gif';
 import salut1 from '../../images/f2.gif';
 import salut2 from '../../images/f3.gif';
@@ -6,20 +5,6 @@ import cat from '../../images/f4.png';
 import s from './Finish.module.css';
 
 export const Finish = () => {
-  useEffect(() => {
-    const sendRequest = async () => {
-      try {
-        await fetch('https://test8-backend.onrender.com/finish', {
-          method: 'POST',
-        });
-      } catch (error) {
-        console.error('Помилка при відправці запиту:', error);
-      }
-    };
-
-    sendRequest();
-  }, []);
-
   return (
     <div className={s.container}>
       <div className={s.upS}>
